@@ -50,7 +50,15 @@ explained in [the guide](https://guide.numa.photo/numa-home).
 
 ## Install
 
-Numa Home is a Docker image for x86-64: `ghcr.io/simmmmm/numa-home`.
+Numa Home is a Docker image for x86-64 and arm64: `ghcr.io/simmmmm/numa-home`.
+Docker picks the right one by itself.
+
+> **arm64 is untested.** It is built for ARM NAS models, Apple-silicon Macs
+> and 64-bit Raspberry Pi boards, but nobody here has ARM hardware to try it
+> on. If it does not start, or something is slow or wrong, please
+> [open an issue](https://github.com/simmmmm/numa-home/issues) with your
+> device and `docker logs numa-home`. If it works, an issue saying so helps
+> too.
 
 1. Put [`compose.yaml`](compose.yaml) in a folder and change the left side
    of each volume to where things live on your machine: `/photos` is the
