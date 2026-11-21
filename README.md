@@ -115,6 +115,14 @@ Optional, for faster decoding: `devices: ["/dev/dri:/dev/dri"]`.
   app at the same time; use Send Home and Numa Home libraries instead. Two
   programs writing one database over SMB can damage it.
 - **No video yet.** Photographs only, for now.
+- **A fast disk for `/data`.** Numa Home keeps its thumbnails in `/data`.
+  When the photographs are on hard disks, put `/data` on an SSD or NVMe
+  volume: the pages then do not wait for the hard disks.
+- **Something is slow?** Add `NUMA_HOME_TIMING=1` to `environment` and
+  restart. Every request is then written to the log with the time it took
+  (`docker logs numa-home`). An
+  [issue](https://github.com/simmmmm/numa-home/issues) with your NAS model
+  and those lines helps.
 
 ## Source and licence
 
